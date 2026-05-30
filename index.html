@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Бюро Талантов | Кадровое агентство</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU"></script>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <a href="index.html">
+                <h1>Бюро Талантов <span style="font-weight:400">/ Bureau of Talents</span></h1>
+                <p>Ваше Кадровое Агентство</p>
+            </a>
+        </div>
+        <a href="#contact-form" class="btn-primary">Связаться</a>
+    </div>
+</header>
+
+<main>
+    <section style="padding-top: 60px;">
+        <div class="container">
+            <h2 style="font-size: 2.8rem; font-weight: 600; line-height: 1.2; font-family: 'Playfair Display', serif;">Соединяем компании с лучшими специалистами<br> и оптимизируем HR-процессы</h2>
+            <p style="font-size: 1.2rem; margin: 24px 0 32px; color: #4a5e6e; max-width: 700px;">Стратегический подход, честность и результат. Ваш надёжный партнёр в мире талантов.</p>
+            <a href="#about" class="btn-outline" style="margin-right: 16px;">Узнать больше</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">О нас</h2>
+            <div style="max-width: 860px;">
+                <p style="font-size: 1.4rem; font-weight: 500; font-family: 'Playfair Display', serif;">Bureau of Talents — не просто подбор, а ваше личное бюро решений.</p>
+                <p style="margin-top: 20px; font-size: 1.05rem; color: #4a5e6e;">У вашего бизнеса есть миссия. Наша — помочь её достичь. Профессионально. Надёжно. Честно.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Наш спектр услуг</h2>
+            <div class="cards-grid">
+                <a href="service-sniping.html" class="service-card">
+                    <h3>Точечный снайпинг</h3>
+                    <p>Находим ровно того специалиста, который станет носителем вашей культуры, ценностей и знаний.</p>
+                    <p style="margin-top: 20px; color: #1e3a5f; font-weight: 600;">Узнать подробнее →</p>
+                </a>
+                <a href="service-hraudit.html" class="service-card">
+                    <h3>HR-аудит</h3>
+                    <p>Оптимизируем подбор, оценку и адаптацию. Чтобы вы забыли про текучку и командно брали новые вершины.</p>
+                    <p style="margin-top: 20px; color: #1e3a5f; font-weight: 600;">Узнать подробнее →</p>
+                </a>
+                <a href="service-consult.html" class="service-card">
+                    <h3>Консультация</h3>
+                    <p>Когда всё вроде стабильно, но бизнес буксует. Находим невидимый тормоз в процессах.</p>
+                    <p style="margin-top: 20px; color: #1e3a5f; font-weight: 600;">Узнать подробнее →</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #ffffff;">
+        <div class="container two-columns">
+            <div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 28px; font-family: 'Playfair Display', serif;">Вам точно к нам, если вы узнали себя:</h3>
+                <ul class="check-list">
+                    <li>Вроде все HR-процессы есть, но найм всё равно «как повезёт».</li>
+                    <li>Нужен один редкий спец, а воронка откликов даёт сотни «мимо».</li>
+                    <li>Чувствуете: в команде что-то не так, но цифры не показывают причину.</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 28px; font-family: 'Playfair Display', serif;">Мы не подбираем «кого-то похожего». Мы:</h3>
+                <ul class="check-list">
+                    <li>Находим адептов ваших идей</li>
+                    <li>Собираем пазл, где каждый элемент усиливает друг друга</li>
+                    <li>Консультируем, когда «всё нормально», но бизнес буксует</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form">
+        <div class="container">
+            <h2 class="section-title">Обсудим ваш проект</h2>
+            <div style="max-width: 680px;">
+                <form id="callbackForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="E-mail" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Телефон" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Расскажите о задаче или вопросе..." id="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Отправить заявку</button>
+                    <p style="font-size: 0.8rem; margin-top: 16px; color: #6c7f8d;">Пока форма демо — после согласования добавим отправку на почту</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Контакты и офис</h2>
+            <div class="contacts-row">
+                <a href="tg://resolve?domain=vi_orchid" class="contact-icon">📱 Telegram</a>
+                <a href="https://t.me/bureau_of_talents" target="_blank" class="contact-icon">📢 Telegram-канал</a>
+                <a href="mailto:vi.cattleya25@gmail.com" class="contact-icon">✉️ Почта</a>
+                <a href="tel:+78005556677" class="contact-icon">📞 Телефон</a>
+            </div>
+            <div id="map"></div>
+            <p style="margin-top: 20px; text-align: center; font-size: 0.9rem; color: #6c7f8d;">📍 Адрес: г. Москва, ул. Тверская, 7 (замените под реальный)</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Бюро Талантов / Bureau of Talents — кадровое агентство полного цикла</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
