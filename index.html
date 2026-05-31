@@ -6,7 +6,6 @@
     <title>Бюро Талантов | Кадровое агентство</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU"></script>
 </head>
 <body>
 
@@ -250,24 +249,18 @@
         </div>
     </section>
 
-    <!-- Контакты и карта (вертикальные кнопки) -->
+            <!-- Контакты (сетка 2x2, без карты и адреса) -->
     <section>
         <div class="container">
-            <h2 class="section-title">Контакты и офис</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                <div>
-                    <div style="display: flex; flex-direction: column; gap: 16px; max-width: 280px;">
-                        <a href="https://t.me/bureau_of_talents" target="_blank" class="contact-icon" style="justify-content: center;">📢 Telegram-канал</a>
-                        <a href="mailto:vi.cattleya25@gmail.com" class="contact-icon" style="justify-content: center;">✉️ Почта</a>
-                        <a href="tel:+78005556677" class="contact-icon" style="justify-content: center;">📞 Телефон</a>
-                        <a href="#" class="contact-icon" style="justify-content: center;">📍 Адрес на карте</a>
-                    </div>
-                </div>
-                <div id="map" style="height: 280px;"></div>
+            <h2 class="section-title">Контакты</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 500px; margin: 0 auto;">
+                <a href="https://t.me/bureau_of_talents" target="_blank" class="contact-icon" style="justify-content: center;">📢 Telegram-канал</a>
+                <a href="#" target="_blank" class="contact-icon" style="justify-content: center;">💬 TenChat</a>
+                <a href="mailto:vi.cattleya25@gmail.com" class="contact-icon" style="justify-content: center;">✉️ Почта</a>
+                <a href="tel:+78005556677" class="contact-icon" style="justify-content: center;">📞 Телефон</a>
             </div>
         </div>
     </section>
-</main>
 
 <footer>
     <div class="container">
