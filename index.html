@@ -13,8 +13,13 @@
     <div class="container header-flex">
         <div class="logo">
             <a href="index.html">
-                <h1>Бюро Талантов <span style="font-weight:400">/ Bureau of Talents</span></h1>
-                <p>Ваше Кадровое Агентство</p>
+                <div class="logo-css">
+                    <span class="logo-circle"></span>
+                    <span class="logo-b">B</span>
+                    <span class="logo-line1">ureau</span>
+                    <span class="logo-line2">of</span>
+                    <span class="logo-line3">Talents</span>
+                </div>
             </a>
         </div>
         <a href="#contact-form" class="btn-primary">Связаться</a>
@@ -22,46 +27,41 @@
 </header>
 
 <main>
-    <!-- Hero: текст по центру, кнопка слева -->
-    <section style="padding-top: 60px;" class="hero-center">
+    <!-- Hero -->
+    <section class="hero-center">
         <div class="container">
-            <h2 style="font-size: 2.8rem; font-weight: 600; line-height: 1.2; font-family: 'Playfair Display', serif;">Соединяем компании с лучшими специалистами<br> и оптимизируем HR-процессы</h2>
-            <p style="font-size: 1.2rem; margin: 24px auto 0; color: #4a5e6e; max-width: 700px;">Стратегический подход, честность и результат. Ваш надёжный партнёр в мире талантов.</p>
+            <h2>Соединяем компании с лучшими специалистами<br> и оптимизируем HR-процессы</h2>
+            <p>Стратегический подход, честность и результат. Ваш надёжный партнёр в мире талантов.</p>
             <div class="hero-button-wrapper">
                 <a href="#about" class="btn-outline">Узнать больше</a>
+                <button class="btn-primary" onclick="openGuideModal()">Скачать гайд →</button>
             </div>
         </div>
     </section>
 
-        <section id="about" style="background: linear-gradient(135deg, #ffffff 0%, #fafcff 100%);">
+    <!-- О нас -->
+    <section id="about">
         <div class="container">
             <div style="text-align: center; margin-bottom: 64px;">
-                <span style="display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #1e3a5f; background: rgba(30,58,95,0.08); padding: 4px 16px; border-radius: 40px; margin-bottom: 24px;">12+ лет экспертизы</span>
-                <h2 style="font-size: 2.5rem; font-family: 'Playfair Display', serif; color: #0a2538; max-width: 800px; margin: 0 auto 24px;">Bureau of Talents — не просто подбор, а ваше личное бюро решений.</h2>
-                <p style="font-size: 1.1rem; color: #4a5e6e; max-width: 700px; margin: 0 auto; line-height: 1.5;">У вашего бизнеса есть миссия. Наша — помочь её достичь. Профессионально. Надёжно. Честно.</p>
+                <span class="lead-magnet-badge" style="margin-bottom: 24px;">12+ лет экспертизы</span>
+                <h2 class="section-title" style="max-width: 800px; margin: 0 auto 24px; border-bottom: none;">Bureau of Talents — не просто подбор, а ваше личное бюро решений.</h2>
+                <p style="font-size: 1.1rem; color: var(--text-light); max-width: 700px; margin: 0 auto; line-height: 1.6;">У вашего бизнеса есть миссия. Наша — помочь её достичь. Профессионально. Надёжно. Честно.</p>
             </div>
-
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 20px;">
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 2.2rem; background: rgba(30,58,95,0.05); width: 70px; height: 70px; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-bullseye" style="color: #1e3a5f; font-size: 1.8rem;"></i>
-                    </div>
-                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Точечный подход</h3>
-                    <p style="color: #6c7f8d;">Ищем не просто кандидата, а носителя вашей культуры, ценностей и знаний.</p>
+            <div class="about-stats-grid">
+                <div class="about-stat-item">
+                    <div class="about-stat-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Точечный подход</h3>
+                    <p>Ищем не просто кандидата, а носителя вашей культуры, ценностей и знаний.</p>
                 </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 2.2rem; background: rgba(30,58,95,0.05); width: 70px; height: 70px; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-chart-line" style="color: #1e3a5f; font-size: 1.8rem;"></i>
-                    </div>
-                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Прозрачность и данные</h3>
-                    <p style="color: #6c7f8d;">Полная отчётность на каждом этапе: от брифинга до оффера и выхода на работу.</p>
+                <div class="about-stat-item">
+                    <div class="about-stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Прозрачность и данные</h3>
+                    <p>Полная отчётность на каждом этапе: от брифинга до оффера и выхода на работу.</p>
                 </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 2.2rem; background: rgba(30,58,95,0.05); width: 70px; height: 70px; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-handshake" style="color: #1e3a5f; font-size: 1.8rem;"></i>
-                    </div>
-                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Долгосрочное партнёрство</h3>
-                    <p style="color: #6c7f8d;">Сопровождаем клиентов годами, экономим до 40% бюджета на найм за счёт качества.</p>
+                <div class="about-stat-item">
+                    <div class="about-stat-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Долгосрочное партнёрство</h3>
+                    <p>Сопровождаем клиентов годами, экономим до 40% бюджета на найм за счёт качества.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 48px;">
@@ -70,18 +70,31 @@
         </div>
     </section>
 
-    <!-- Цифры и факты -->
-    <section style="background: #ffffff;">
+    <div class="section-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+    </div>
+
+    <!-- Бюро в цифрах -->
+    <section>
         <div class="container">
             <h2 class="section-title">Бюро в цифрах</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
-                <div><div style="font-size: 3rem; font-weight: 700; color: #1e3a5f; font-family: 'Playfair Display';">47+</div><p style="margin-top: 12px; font-weight: 500;">закрытых позиций</p></div>
-                <div><div style="font-size: 3rem; font-weight: 700; color: #1e3a5f; font-family: 'Playfair Display';">98%</div><p style="margin-top: 12px; font-weight: 500;">успешных прохождений испытательного срока</p></div>
-                <div><div style="font-size: 3rem; font-weight: 700; color: #1e3a5f; font-family: 'Playfair Display';">12</div><p style="margin-top: 12px; font-weight: 500;">средних дней закрытия вакансии</p></div>
-                <div><div style="font-size: 3rem; font-weight: 700; color: #1e3a5f; font-family: 'Playfair Display';">100%</div><p style="margin-top: 12px; font-weight: 500;">конфиденциальность</p></div>
+            <div class="stats-grid">
+                <div class="stat-item"><div class="stat-number">8+</div><p>лет экспертизы</p></div>
+                <div class="stat-item"><div class="stat-number">993+</div><p>закрытых позиций</p></div>
+                <div class="stat-item"><div class="stat-number">98%</div><p>успешных прохождений испытательного срока</p></div>
+                <div class="stat-item"><div class="stat-number">10</div><p>средних дней закрытия вакансии</p></div>
+                <div class="stat-item"><div class="stat-number">100%</div><p>конфиденциальность</p></div>
             </div>
         </div>
     </section>
+
+    <div class="section-divider-dots">
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+    </div>
 
     <!-- Спектр услуг -->
     <section>
@@ -89,32 +102,38 @@
             <h2 class="section-title">Наш спектр услуг</h2>
             <div class="cards-grid">
                 <a href="service-sniping.html" class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🎯</div>
-                    <div style="font-size: 0.75rem; color: #8ba0ae; margin-bottom: 8px; letter-spacing: 1px;">[ТУТ БУДЕТ ФОТО]</div>
+                    <div class="service-card-icon">🎯</div>
+                    <div class="service-card-placeholder">[ТУТ БУДЕТ ФОТО]</div>
                     <h3>Точечный снайпинг</h3>
                     <p>Находим ровно того специалиста, который станет носителем вашей культуры, ценностей и знаний.</p>
-                    <p style="margin-top: 20px; color: #1e3a5f; font-weight: 600;">Узнать подробнее →</p>
+                    <span class="service-card-link">Узнать подробнее →</span>
                 </a>
                 <a href="service-hraudit.html" class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">📊</div>
-                    <div style="font-size: 0.75rem; color: #8ba0ae; margin-bottom: 8px; letter-spacing: 1px;">[ТУТ БУДЕТ ФОТО]</div>
+                    <div class="service-card-icon">📊</div>
+                    <div class="service-card-placeholder">[ТУТ БУДЕТ ФОТО]</div>
                     <h3>HR-аудит</h3>
                     <p>Оптимизируем подбор, оценку и адаптацию. Чтобы вы забыли про текучку и командно брали новые вершины.</p>
-                    <p style="margin-top: 20px; color: #1e3a5f; font-weight: 600;">Узнать подробнее →</p>
+                    <span class="service-card-link">Узнать подробнее →</span>
                 </a>
                 <a href="service-consult.html" class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">💡</div>
-                    <div style="font-size: 0.75rem; color: #8ba0ae; margin-bottom: 8px; letter-spacing: 1px;">[ТУТ БУДЕТ ФОТО]</div>
+                    <div class="service-card-icon">💡</div>
+                    <div class="service-card-placeholder">[ТУТ БУДЕТ ФОТО]</div>
                     <h3>Консультация</h3>
                     <p>Когда всё вроде стабильно, но бизнес буксует. Находим невидимый тормоз в процессах.</p>
-                    <p style="margin-top: 20px; color: #1e3a5f; font-weight: 600;">Узнать подробнее →</p>
+                    <span class="service-card-link">Узнать подробнее →</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Блок "Вам точно к нам" - премиум версия -->
-    <section style="background: #ffffff;">
+    <div class="section-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+    </div>
+
+    <!-- Премиум-блок "Вам точно к нам" -->
+    <section>
         <div class="container">
             <div class="premium-compare">
                 <div class="premium-card">
@@ -137,35 +156,96 @@
         </div>
     </section>
 
-    <!-- Ключевые результаты -->
+    <div class="section-divider-dots">
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+    </div>
+
+    <!-- ЛИД-МАГНИТ (гайд, вставка) -->
     <section>
         <div class="container">
-            <h2 class="section-title">Ключевые результаты</h2>
-            <div class="cards-grid">
-                <div class="service-card" style="cursor: default;">
-                    <div style="font-size: 2rem;">🏭</div>
-                    <div style="font-size: 0.75rem; color: #8ba0ae; margin-bottom: 8px; letter-spacing: 1px;">[ТУТ БУДЕТ ФОТО]</div>
-                    <h3>Производственный холдинг</h3>
-                    <p>Закрыли позицию технического директора за 11 дней. Кандидат увеличил производительность цеха на 23% за 3 месяца.</p>
+            <div class="lead-magnet-inline">
+                <div class="lead-magnet-inline-content">
+                    <span class="lead-magnet-badge">Бесплатный гайд</span>
+                    <h3>«Как написать вакансию, которая нанимает без вас»</h3>
+                    <p>10 шагов, примеры «было/стало», чек-лист для проверки — всё, чтобы ваша вакансия привлекала лучших даже когда вы спите.</p>
+                    <button class="btn-primary" onclick="openGuideModal()">Забрать гайд →</button>
                 </div>
-                <div class="service-card" style="cursor: default;">
-                    <div style="font-size: 2rem;">💻</div>
-                    <div style="font-size: 0.75rem; color: #8ba0ae; margin-bottom: 8px; letter-spacing: 1px;">[ТУТ БУДЕТ ФОТО]</div>
-                    <h3>IT-компания (300+ сотрудников)</h3>
-                    <p>Провели HR-аудит, сократили текучку с 27% до 11% за полгода. Экономия на найме — 4,2 млн руб./год.</p>
-                </div>
-                <div class="service-card" style="cursor: default;">
-                    <div style="font-size: 2rem;">🏢</div>
-                    <div style="font-size: 0.75rem; color: #8ba0ae; margin-bottom: 8px; letter-spacing: 1px;">[ТУТ БУДЕТ ФОТО]</div>
-                    <h3>Финансовый сектор</h3>
-                    <p>Снайпинг Head of Compliance. Оффер принят, кандидат работает 2+ года, под его руководством отдел прошёл 4 проверки без замечаний.</p>
+                <div class="lead-magnet-inline-visual">
+                    <div class="lead-magnet-pdf-icon">
+                        <span class="pdf-icon-big">📄</span>
+                        <span class="pdf-label">PDF</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Отзывы - карусель (бесконечный loop) -->
-    <section style="background: #ffffff;">
+    <div class="section-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+    </div>
+
+    <!-- Ключевые результаты -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Ключевые результаты</h2>
+            <div class="cards-grid">
+                <div class="case-card">
+                    <div class="case-icon">🏭</div>
+                    <div class="case-image-placeholder">[ТУТ БУДЕТ ФОТО]</div>
+                    <h3>Крупный холдинг цифровых товаров</h3>
+                    <div class="case-details">
+                        <div class="case-field"><span class="case-label">Позиция</span><span class="case-value">Директор по стратегическому развитию</span></div>
+                        <div class="case-field"><span class="case-label">Сложность</span><span class="case-value">Ограниченный рынок кандидатов в игровом e-com</span></div>
+                        <div class="case-field"><span class="case-label">Решение</span><span class="case-value">Снайпинг на международном рынке</span></div>
+                    </div>
+                    <div class="case-result">
+                        <span class="case-result-label">Результат</span>
+                        <span class="case-result-value">Специалист увеличил эффективность подразделений на +32% и вывел компанию на 4+ зарубежных рынка</span>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-icon">💻</div>
+                    <div class="case-image-placeholder">[ТУТ БУДЕТ ФОТО]</div>
+                    <h3>IT-стартап</h3>
+                    <div class="case-details">
+                        <div class="case-field"><span class="case-label">Позиция</span><span class="case-value">DevOps-инженер</span></div>
+                        <div class="case-field"><span class="case-label">Задача</span><span class="case-value">Инфраструктуры не было, релизы падали</span></div>
+                        <div class="case-field"><span class="case-label">Решение</span><span class="case-value">Выстроил CI/CD с нуля</span></div>
+                    </div>
+                    <div class="case-result">
+                        <span class="case-result-label">Результат</span>
+                        <span class="case-result-value">Сократил время развертывания среды с 3 дней до 1 дня, релизы перестали «гореть» по ночам</span>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-icon">🏗️</div>
+                    <div class="case-image-placeholder">[ТУТ БУДЕТ ФОТО]</div>
+                    <h3>Строительная компания</h3>
+                    <div class="case-details">
+                        <div class="case-field"><span class="case-label">Услуга</span><span class="case-value">HR-аудит</span></div>
+                        <div class="case-field"><span class="case-label">Выявили</span><span class="case-value">Корневую причину низкой вовлеченности</span></div>
+                    </div>
+                    <div class="case-result">
+                        <span class="case-result-label">Результаты</span>
+                        <span class="case-result-value">Вовлеченность выросла с 17% до 30%, отток специалистов снизился на 22%, экономия на найме 2,4 млн ₽/год</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider-dots">
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+    </div>
+
+    <!-- Отзывы -->
+    <section>
         <div class="container">
             <h2 class="section-title">Отзывы клиентов</h2>
             <div class="reviews-carousel">
@@ -173,28 +253,28 @@
                 <div class="reviews-container">
                     <div class="reviews-wrapper">
                         <div class="review-slide">
-                            <div style="background: #f8fafc; border-radius: 32px; padding: 40px; border: 1px solid #eef2f6;">
+                            <div style="background: white; border-radius: 32px; padding: 40px; border: 1px solid #e8e5df;">
                                 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 24px;">
-                                    <div style="width: 60px; height: 60px; background: #1e3a5f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">АК</div>
-                                    <div><div style="font-weight: 700; font-size: 1.2rem;">Анна Ковалёва</div><div style="color: #6c7f8d;">HRD, производственная компания</div></div>
+                                    <div style="width: 60px; height: 60px; background: #7E94BF; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">АК</div>
+                                    <div><div style="font-weight: 700; font-size: 1.2rem;">Анна Ковалёва</div><div style="color: #71717c;">HRD, производственная компания</div></div>
                                 </div>
                                 <p>«Работали с Bureau of Talents по закрытию двух сложных позиций. Отношение — партнёрское, не "отзвонились-отписались". Слышат реальный запрос, дают кандидатов, которые действительно усиливают. Спасибо за системность и честность».</p>
                             </div>
                         </div>
                         <div class="review-slide">
-                            <div style="background: #f8fafc; border-radius: 32px; padding: 40px; border: 1px solid #eef2f6;">
+                            <div style="background: white; border-radius: 32px; padding: 40px; border: 1px solid #e8e5df;">
                                 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 24px;">
-                                    <div style="width: 60px; height: 60px; background: #1e3a5f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">МД</div>
-                                    <div><div style="font-weight: 700; font-size: 1.2rem;">Михаил Дорофеев</div><div style="color: #6c7f8d;">CEO, IT-компания</div></div>
+                                    <div style="width: 60px; height: 60px; background: #7E94BF; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">МД</div>
+                                    <div><div style="font-weight: 700; font-size: 1.2rem;">Михаил Дорофеев</div><div style="color: #71717c;">CEO, IT-компания</div></div>
                                 </div>
                                 <p>«HR-аудит от Bureau of Talents открыл нам глаза на системные ошибки в найме. Внедрили рекомендации — текучка сократилась вдвое. Очень довольны, рекомендуем».</p>
                             </div>
                         </div>
                         <div class="review-slide">
-                            <div style="background: #f8fafc; border-radius: 32px; padding: 40px; border: 1px solid #eef2f6;">
+                            <div style="background: white; border-radius: 32px; padding: 40px; border: 1px solid #e8e5df;">
                                 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 24px;">
-                                    <div style="width: 60px; height: 60px; background: #1e3a5f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">ЕП</div>
-                                    <div><div style="font-weight: 700; font-size: 1.2rem;">Екатерина Павлова</div><div style="color: #6c7f8d;">Руководитель отдела персонала, ритейл</div></div>
+                                    <div style="width: 60px; height: 60px; background: #7E94BF; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">ЕП</div>
+                                    <div><div style="font-weight: 700; font-size: 1.2rem;">Екатерина Павлова</div><div style="color: #71717c;">Руководитель отдела персонала, ритейл</div></div>
                                 </div>
                                 <p>«Консультация помогла пересобрать воронку найма. Точечные правки дали +40% закрытых вакансий. Бюро Талантов — про экспертность и результат».</p>
                             </div>
@@ -207,14 +287,20 @@
         </div>
     </section>
 
-       <!-- FAQ аккордеон (вопросы по центру) -->
+    <div class="section-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+    </div>
+
+    <!-- FAQ -->
     <section>
         <div class="container">
             <h2 class="section-title">Часто задаваемые вопросы</h2>
             <div class="faq-centered">
                 <div class="faq-item">
                     <div class="faq-question"><span>Сколько времени занимает закрытие вакансии?</span><span class="faq-icon">+</span></div>
-                    <div class="faq-answer">В среднем 10–14 дней по снайпингу. По сложным позициям — до 21 дня. Работаем на результат, а не на скорость любой ценой.</div>
+                    <div class="faq-answer">В среднем 10–14 дней по снайпингу. По сложным, уникальным позициям от 1,5 месяцев до 3 месяцев (зависит от редкости навыков и географии). Работаем на результат, а не на скорость любой ценой. На брифе честно проговариваем все риски и предлагаем стратегию, которая ускорит процесс без потери качества.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question"><span>Какая гарантия на подбор?</span><span class="faq-icon">+</span></div>
@@ -228,11 +314,22 @@
                     <div class="faq-question"><span>Работаете только с крупным бизнесом?</span><span class="faq-icon">+</span></div>
                     <div class="faq-answer">Нет. Помогаем бизнесу любого масштаба — от стартапов до федеральных компаний. Важен не размер, а сложность и ценность задачи.</div>
                 </div>
+                <!-- НОВЫЙ ВОПРОС -->
+                <div class="faq-item">
+                    <div class="faq-question"><span>Вы работаете с наймом "под ключ" или только консультируете?</span><span class="faq-icon">+</span></div>
+                    <div class="faq-answer">И то, и другое. Закрываем вакансию полностью (от профиля до оффера) или усиливаем ваш отдел персонала как внешние эксперты.</div>
+                </div>
             </div>
         </div>
     </section>
 
-        <!-- Форма связи (заголовок как обычно, форма по центру) -->
+    <div class="section-divider-dots">
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+        <span class="dot-divider"></span>
+    </div>
+
+    <!-- Форма связи -->
     <section id="contact-form">
         <div class="container">
             <h2 class="section-title">Обсудим ваш проект</h2>
@@ -243,13 +340,19 @@
                     <div class="form-group"><input type="tel" placeholder="Телефон" id="phone"></div>
                     <div class="form-group"><textarea rows="4" placeholder="Расскажите о задаче или вопросе..." id="message"></textarea></div>
                     <button type="submit" class="btn-primary" style="width: 100%;">Отправить заявку</button>
-                    <p style="font-size: 0.8rem; margin-top: 16px; color: #6c7f8d;">Пока форма демо — после согласования добавим отправку на почту</p>
+                    <p style="font-size: 0.8rem; margin-top: 16px; color: #71717c;">Пока форма демо — после согласования добавим отправку на почту</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Контакты (сетка 2×2, без карты и адреса, с TenChat) -->
+    <div class="section-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+    </div>
+
+    <!-- Контакты -->
     <section>
         <div class="container">
             <h2 class="section-title">Контакты</h2>
@@ -262,12 +365,31 @@
         </div>
     </section>
 
+</main>
+
 <footer>
     <div class="container">
         <p>© 2025 Бюро Талантов / Bureau of Talents — кадровое агентство полного цикла</p>
     </div>
 </footer>
 
+<div class="modal-overlay" id="guideModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeGuideModal()">✕</button>
+        <span class="modal-icon">🎁</span>
+        <h3>«Как написать вакансию, которая нанимает без вас»</h3>
+        <p>Заполните форму — и мы пришлём гайд на вашу почту</p>
+        <form id="guideFormModal">
+            <div class="form-group"><input type="text" placeholder="Ваше имя" id="guide_modal_name" required></div>
+            <div class="form-group"><input type="email" placeholder="E-mail" id="guide_modal_email" required></div>
+            <div class="form-group"><input type="tel" placeholder="Телефон" id="guide_modal_phone"></div>
+            <div class="form-group"><input type="text" placeholder="Компания" id="guide_modal_company" required></div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Забрать гайд →</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
