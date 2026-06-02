@@ -13,16 +13,31 @@ function initMap() {
     }
 }
 
-// ===== FORM HANDLER (DEMO MODE) =====
+// ===== FORM HANDLER =====
 function initFormHandler() {
     const form = document.getElementById('callbackForm');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email')?.value || 'не указан';
-            alert('✅ Форма заглушка. После согласования добавим отправку на почту ' + email);
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Отправляем...';
+        btn.disabled = true;
+
+        const data = new FormData(form);
+        fetch('https://formspree.io/f/ВАШ_ID_ФОРМЫ', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(r => r.json()).then(() => {
+            alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+            form.reset();
+        }).catch(() => {
+            alert('❌ Ошибка отправки. Попробуйте позже или напишите нам на почту.');
+        }).finally(() => {
+            btn.textContent = 'Отправить заявку';
+            btn.disabled = false;
         });
-    }
+    });
 }
 
 // ===== SMOOTH SCROLL =====
@@ -142,13 +157,116 @@ function initFaqAccordion() {
     });
 }
 
-// ===== PAGE LOAD HANDLER =====
+// ===== MODAL =====
+function openGuideModal() {
+    document.getElementById('guideModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeGuideModal() {
+    document.getElementById('guideModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('guideModal');
+    if (e.target === modal) closeGuideModal();
+});
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeGuideModal();
+});
+
+// ===== GUIDE FORM (EmailJS) =====
+function initGuideForm(formId, nameId, emailId, phoneId, companyId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Отправляем...';
+        btn.disabled = true;
+
+        const name = document.getElementById(nameId)?.value || '';
+        const email = document.getElementById(emailId)?.value || '';
+        const phone = document.getElementById(phoneId)?.value || '';
+        const company = document.getElementById(companyId)?.value || '';
+
+        emailjs.init('ВАШ_PUBLIC_KEY_EMAILJS');
+
+        // 1 — письмо пользователю с PDF
+        fetch('assets/guide.pdf')
+            .then(r => r.blob())
+            .then(pdfBlob => {
+                const pdfFile = new File([pdfBlob], 'guide.pdf', { type: 'application/pdf' });
+                return emailjs.send('ВАШ_SERVICE_ID', 'ВАШ_TEMPLATE_ID_ДЛЯ_КЛИЕНТА', {
+                    to_name: name,
+                    to_email: email,
+                    company: company,
+                    phone: phone,
+                    site: 'bureau-of-talents.ru',
+                }, {
+                    attachments: { 'guide.pdf': pdfFile }
+                });
+            })
+            .then(() => {
+                // 2 — уведомление владельцу сайта
+                return emailjs.send('ВАШ_SERVICE_ID', 'ВАШ_TEMPLATE_ID_ДЛЯ_ВЛАДЕЛЬЦА', {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    company: company,
+                    owner_email: 'vi.cattleya25@gmail.com',
+                });
+            })
+            .then(() => {
+                alert('✅ Гайд отправлен на ' + email + '! Проверьте папку «Входящие» или «Спам».');
+                form.reset();
+                closeGuideModal();
+            })
+            .catch(() => {
+                alert('❌ Ошибка отправки. Попробуйте позже или напишите нам: vi.cattleya25@gmail.com');
+            })
+            .finally(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+    });
+}
+
+// ===== CALLBACK FORM (Formspree) =====
+function initFormHandler() {
+    const form = document.getElementById('callbackForm');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Отправляем...';
+        btn.disabled = true;
+
+        const data = new FormData(form);
+        fetch('https://formspree.io/f/ВАШ_ID_ФОРМЫ', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(r => r.json()).then(() => {
+            alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+            form.reset();
+        }).catch(() => {
+            alert('❌ Ошибка отправки. Попробуйте позже или напишите нам на почту.');
+        }).finally(() => {
+            btn.textContent = 'Отправить заявку';
+            btn.disabled = false;
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initFormHandler();
     initSmoothScroll();
     initReviewsCarousel();
     initFaqAccordion();
-    
+    initGuideForm('guideFormModal', 'guide_modal_name', 'guide_modal_email', 'guide_modal_phone', 'guide_modal_company');
+
     if (typeof ymaps !== 'undefined') {
         ymaps.ready(initMap);
     }
