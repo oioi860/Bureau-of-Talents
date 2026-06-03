@@ -23,6 +23,8 @@
 body {
     font-family: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
     background: var(--bg-main);
+    background-image: radial-gradient(rgba(126,148,191,0.25) 1px, transparent 1px);
+    background-size: 28px 28px;
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -159,20 +161,34 @@ header {
     padding-top: 100px !important;
     position: relative;
     overflow: hidden;
+    border-radius: 0 0 50% 50%;
+    box-shadow: 0 8px 24px rgba(44,58,75,0.06);
 }
 .hero-center::before {
     content: '';
     position: absolute;
-    top: -60px;
-    left: -10%;
-    width: 120%;
-    height: 400px;
-    background: radial-gradient(ellipse at center, rgba(126,148,191,0.15) 0%, transparent 70%);
+    top: -150px;
+    left: -150px;
+    width: 700px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(126,148,191,0.12) 0%, rgba(126,148,191,0) 70%);
+    filter: blur(70px);
     pointer-events: none;
     z-index: 0;
 }
 .hero-center::after {
-    display: none;
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(126,148,191,0.08) 0%, rgba(126,148,191,0) 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
 }
 .hero-center .container {
     display: flex; flex-direction: column; align-items: center;
@@ -664,8 +680,8 @@ input:focus, textarea:focus {
 }
 .contact-icon:hover {
     border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(126,148,191,0.2);
 }
 
 /* ===== ЛИД-МАГНИТ ===== */
@@ -881,13 +897,150 @@ input:focus, textarea:focus {
 
 /* ===== ПОДВАЛ ===== */
 footer {
-    background: var(--card-bg);
-    padding: 36px 0;
+    background: rgba(255,255,255,0.85);
+    padding: 24px 0;
     text-align: center;
     color: var(--text-light);
     font-size: 0.82rem;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid rgba(126,148,191,0.3);
 }
+
+/* ===== ФОНОВЫЕ ИЗОБРАЖЕНИЯ СЕКЦИЙ ===== */
+
+/* Hero — фоновое изображение + существующее свечение */
+.hero-center {
+    background: linear-gradient(rgba(244,241,234, 0.85), rgba(244,241,234, 0.85)), url('../assets/hero.jfif') center/cover no-repeat;
+}
+
+/* О нас — размытый фон + затемнение */
+.bg-about {
+    background: rgba(244,241,234, 0.9);
+}
+.bg-about::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../assets/onas.jpg') center/cover no-repeat;
+    filter: blur(6px);
+    z-index: 0;
+    pointer-events: none;
+}
+.bg-about::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(244,241,234, 0.9);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Бюро в цифрах */
+.bg-stats {
+    background: linear-gradient(rgba(244,241,234, 0.85), rgba(244,241,234, 0.85)), url('../assets/burovcifrah.jpeg') center/cover no-repeat;
+}
+.bg-stats::before,
+.bg-stats::after {
+    display: none;
+}
+
+/* Спектр услуг — с размытием */
+.bg-services {
+    background: rgba(244,241,234, 0.85);
+}
+.bg-services::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../assets/uslugi.jfif') center/cover no-repeat;
+    filter: blur(2px);
+    z-index: 0;
+    pointer-events: none;
+}
+.bg-services::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(244,241,234, 0.85);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Премиум-блок "Вам точно к нам" — с размытием */
+.bg-premium {
+    background: rgba(244,241,234, 0.9);
+}
+.bg-premium::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../assets/sravnenie.jpg') center/cover no-repeat;
+    filter: blur(3px);
+    z-index: 0;
+    pointer-events: none;
+}
+.bg-premium::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(244,241,234, 0.9);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Лид-магнит (гайд) */
+.bg-guide {
+    background: linear-gradient(rgba(244,241,234, 0.8), rgba(244,241,234, 0.8)), url('../assets/lid-magnit.jpg') center/cover no-repeat;
+}
+.bg-guide::before,
+.bg-guide::after {
+    display: none;
+}
+
+/* Ключевые результаты (кейсы) */
+.bg-cases {
+    background: linear-gradient(rgba(244,241,234, 0.85), rgba(244,241,234, 0.85)), url('../assets/rezutati.jfif') center/cover no-repeat;
+}
+.bg-cases::before,
+.bg-cases::after {
+    display: none;
+}
+
+/* Форма связи — CSS-шум + акцентный круг */
+.bg-form {
+    position: relative;
+}
+.bg-form::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseForm'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseForm)' opacity='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 150px 150px;
+}
+.bg-form::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(126,148,191,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Контакты — фон наследуется от body (глобальная точечная сетка) */
 
 /* ===== ВСПОМОГАТЕЛЬНЫЕ СТИЛИ ===== */
 .about-stats-grid {
@@ -933,6 +1086,37 @@ footer {
     .modal-content { padding: 40px 24px 32px; }
     .hero-button-wrapper { flex-direction: column; align-items: center; }
     header { padding: 10px 0; }
+    /* Hero blur-овалы — уменьшаем */
+    .hero-center::before {
+        width: 300px;
+        height: 300px;
+        top: -50px;
+        left: -50px;
+        filter: blur(30px);
+    }
+    .hero-center::after {
+        width: 300px;
+        height: 300px;
+        bottom: -50px;
+        right: -50px;
+        filter: blur(30px);
+        background: radial-gradient(circle, rgba(126,148,191,0.06) 0%, rgba(126,148,191,0) 70%);
+    }
+    /* Декоративные круги секций — уменьшаем */
+    section::before {
+        width: 250px;
+        height: 250px;
+        top: 0;
+        left: -100px;
+        filter: blur(40px);
+    }
+    section::after {
+        width: 200px;
+        height: 200px;
+        bottom: 0;
+        right: -80px;
+        filter: blur(40px);
+    }
 }
 
 @media (max-width: 480px) {
