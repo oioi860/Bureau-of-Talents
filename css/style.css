@@ -154,7 +154,26 @@ header {
 .logo a:hover::after { width: 70px; }
 
 /* ===== HERO ===== */
-.hero-center { text-align: center; padding-top: 100px !important; }
+.hero-center {
+    text-align: center;
+    padding-top: 100px !important;
+    position: relative;
+    overflow: hidden;
+}
+.hero-center::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: -10%;
+    width: 120%;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(126,148,191,0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+.hero-center::after {
+    display: none;
+}
 .hero-center .container {
     display: flex; flex-direction: column; align-items: center;
     max-width: 800px;
@@ -219,6 +238,35 @@ header {
 /* ===== СЕКЦИИ ===== */
 section {
     padding: 100px 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+section::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(126,148,191,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(126,148,191,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+section > * {
     position: relative;
     z-index: 1;
 }
