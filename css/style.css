@@ -196,21 +196,24 @@ header {
 }
 
 .btn-outline {
-    background: transparent;
-    border: 1px solid var(--border-light);
+    background: rgba(126,148,191,0.08);
+    border: 1px solid var(--accent);
     padding: 13px 32px;
     border-radius: 100px;
     font-weight: 500;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
     color: var(--text-dark);
 }
 .btn-outline:hover {
+    background: var(--accent);
     border-color: var(--accent);
-    background: rgba(126,148,191,0.06);
+    color: white;
+    box-shadow: 0 4px 14px rgba(126,148,191,0.3);
+    transform: translateY(-2px);
 }
 
 /* ===== СЕКЦИИ ===== */
