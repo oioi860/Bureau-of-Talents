@@ -376,6 +376,12 @@
                     <div class="form-group"><input type="email" placeholder="E-mail" id="email" required></div>
                     <div class="form-group"><input type="tel" placeholder="Телефон" id="phone"></div>
                     <div class="form-group"><textarea rows="4" placeholder="Расскажите о задаче или вопросе..." id="message"></textarea></div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="callbackConsent">
+                            <span>Я соглашаюсь на обработку персональных данных и ознакомлен с <a href="privacy-policy.html" target="_blank">Политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
                     <button type="submit" class="btn-primary" style="width: 100%;">Отправить заявку</button>
                     <p style="font-size: 0.8rem; margin-top: 16px; color: #71717c;">Пока форма демо — после согласования добавим отправку на почту</p>
                 </form>
@@ -486,6 +492,8 @@
         Executive Search • HR Audit • HR Consulting
     </span>
 
+    <a href="privacy-policy.html" class="footer-privacy">Политика конфиденциальности</a>
+
 </div>
 
     </div>
@@ -502,8 +510,21 @@
             <div class="form-group"><input type="email" placeholder="E-mail" id="guide_modal_email" required></div>
             <div class="form-group"><input type="tel" placeholder="Телефон" id="guide_modal_phone"></div>
             <div class="form-group"><input type="text" placeholder="Компания" id="guide_modal_company" required></div>
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="guideConsent">
+                    <span>Я соглашаюсь на обработку персональных данных и ознакомлен с <a href="privacy-policy.html" target="_blank">Политикой конфиденциальности</a></span>
+                </label>
+            </div>
             <button type="submit" class="btn-primary" style="width: 100%;">Забрать гайд →</button>
         </form>
+    </div>
+</div>
+
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-content">
+        <p>Мы используем файлы cookie, чтобы вам было удобнее. Продолжая использовать сайт, вы соглашаетесь на их обработку.</p>
+        <button class="btn-primary cookie-btn" id="cookieAccept">Принять</button>
     </div>
 </div>
 
