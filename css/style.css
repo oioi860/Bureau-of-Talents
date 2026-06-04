@@ -5,17 +5,17 @@
 :root {
     --bg-main: #F4F1EA;
     --accent: #7E94BF;
-    --text-dark: #2C3A4B;
+    --text-dark: #1F2937;
     --text-light: #71717c;
     --card-bg: #ffffff;
     --border-light: #e5e2db;
-    --shadow-sm: 0 2px 8px rgba(44,58,75,0.04);
-    --shadow-md: 0 8px 24px rgba(44,58,75,0.06);
-    --shadow-lg: 0 20px 48px rgba(44,58,75,0.08);
-    --radius-sm: 16px;
-    --radius-md: 24px;
-    --radius-lg: 32px;
-    --radius-xl: 40px;
+    --shadow-sm: 0 1px 4px rgba(44,58,75,0.03);
+    --shadow-md: 0 4px 12px rgba(44,58,75,0.04);
+    --shadow-lg: 0 10px 24px rgba(44,58,75,0.05);
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,7 +23,6 @@
 body {
     font-family: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
     background: var(--bg-main);
-    background-image: radial-gradient(rgba(126,148,191,0.25) 1px, transparent 1px);
     background-size: 28px 28px;
     color: var(--text-dark);
     line-height: 1.6;
@@ -77,8 +76,8 @@ body::after {
 
 h1, h2, h3, .section-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.03em;
     color: var(--text-dark);
 }
 
@@ -210,16 +209,16 @@ header {
     background: var(--accent);
     color: white;
     border: none;
-    padding: 14px 36px;
-    border-radius: 100px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    padding: 16px 34px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
     text-decoration: none;
     display: inline-block;
-    letter-spacing: 0.3px;
-    box-shadow: 0 4px 14px rgba(126,148,191,0.2);
+    box-shadow: 0 4px 12px rgba(126,148,191,.12);
 }
 .btn-primary:hover {
     transform: translateY(-2px);
@@ -234,7 +233,7 @@ header {
     background: rgba(126,148,191,0.08);
     border: 1px solid var(--accent);
     padding: 13px 32px;
-    border-radius: 100px;
+    border-radius: 14px;
     font-weight: 500;
     font-size: 0.9rem;
     cursor: pointer;
@@ -253,7 +252,7 @@ header {
 
 /* ===== СЕКЦИИ ===== */
 section {
-    padding: 100px 0;
+    padding: 130px 0;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -1127,4 +1126,86 @@ footer {
     .premium-compare { padding: 24px 20px; }
     .lead-magnet-inline { padding: 28px 20px; }
     .lead-magnet-inline-content h3 { font-size: 1.3rem; }
+}
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ: УБРАТЬ ДЕКОРАТИВНЫЕ ОВАЛЫ ===== */
+@media (max-width: 768px) {
+    /* Убираем глобальные овалы на фоне страницы */
+    body::after {
+        background: none !important;
+    }
+
+    /* Убираем овал в блоке «Вам точно к нам» */
+    .premium-compare::before {
+        display: none !important;
+    }
+
+    /* Убираем овал в блоках CTA (призыв к действию) */
+    .cta-section::before {
+        display: none !important;
+    }
+
+    /* Если есть овалы в других блоках — добавить аналогично */
+    /* Например, в hero-секции или других местах — перечислю наиболее вероятные */
+    .service-hero::before,
+    .service-hero::after {
+        display: none !important;
+    }
+
+    /* Дополнительно: убираем возможные овалы в карточках, если они есть */
+    .service-card::before,
+    .case-card::before {
+        display: none !important;
+    }
+
+    /* Убираем овалы в модальном окне, если есть */
+    .modal-content::before,
+    .modal-content::after {
+        display: none !important;
+    }
+}
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ: УБРАТЬ ВСЕ ДЕКОРАТИВНЫЕ ОВАЛЫ ===== */
+@media (max-width: 768px) {
+
+    /* Полностью отключаем все декоративные овалы */
+    section::before,
+    section::after,
+    .hero-center::before,
+    .hero-center::after,
+    .premium-compare::before,
+    .cta-section::before,
+    body::after {
+        display: none !important;
+    }
+
+    /* Отключаем скругление hero-блока, если оно было */
+    .hero-center {
+        border-radius: 0 !important;
+    }
+
+    /* Для блоков, у которых фоновое изображение задано через отдельные классы,
+       оставляем корректное позиционирование (пример) */
+    .bg-about::before,
+    .bg-services::before,
+    .bg-premium::before,
+    .bg-guide,
+    .bg-stats,
+    .bg-cases {
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+}
+.cards-grid,
+.stats-grid,
+.about-stats-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card,
+.case-card,
+.faq-item,
+.premium-card,
+.lead-magnet-inline {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.88);
 }
