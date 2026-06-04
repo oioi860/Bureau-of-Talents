@@ -11,6 +11,7 @@
 
 <header>
     <div class="container header-flex">
+
         <div class="logo">
             <a href="index.html">
                 <div class="logo-css">
@@ -22,7 +23,31 @@
                 </div>
             </a>
         </div>
-        <a href="#contact-form" class="btn-primary">Связаться</a>
+
+        <nav class="desktop-nav">
+            <a href="#about">О нас</a>
+            <a href="#services">Услуги</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#contact-form">Консультация</a>
+        </nav>
+
+        <a href="#contact-form" class="btn-primary header-btn">
+            Связаться
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#contact-form">Консультация</a>
     </div>
 </header>
 
@@ -97,7 +122,7 @@
     </div>
 
     <!-- Спектр услуг -->
-    <section class="bg-services">
+    <section id="services" class="bg-services">
         <div class="container">
             <h2 class="section-title">Наш спектр услуг</h2>
             <div class="cards-grid">
@@ -185,13 +210,31 @@
         <span class="divider-line"></span>
     </div>
 
+<section class="executive-note">
+
+    <div class="container">
+
+        <p>
+            Мы не работаем по принципу
+            «отправим десяток резюме и посмотрим».
+        </p>
+
+        <h2>
+            Каждый проект начинается с понимания
+            бизнеса, команды и точки роста компании.
+        </h2>
+
+    </div>
+
+</section>
+
     <!-- Ключевые результаты -->
     <section class="bg-cases">
         <div class="container">
             <h2 class="section-title">Ключевые результаты</h2>
             <div class="cards-grid">
                 <div class="case-card">
-                    <div class="case-card-img"><img src="assets/case-digital.jpg.jfif" alt="Крупный холдинг цифровых товаров"></div>
+                    <div class="case-card-img"><img src="assets/case-digital.jfif" alt="Крупный холдинг цифровых товаров"></div>
                     <h3>Крупный холдинг цифровых товаров</h3>
                     <div class="case-details">
                         <div class="case-field"><span class="case-label">Позиция</span><span class="case-value">Директор по стратегическому развитию</span></div>
@@ -345,28 +388,106 @@
         <span class="divider-diamond"></span>
         <span class="divider-line"></span>
     </div>
+<section class="trust-section">
 
-    <!-- Контакты -->
-    <div class="section-wave">
-        <svg viewBox="0 0 1440 24" preserveAspectRatio="none"><path d="M0,12 C240,0 480,24 720,12 C960,0 1200,24 1440,12 L1440,24 L0,24 Z" fill="rgba(126,148,191,0.06)"/></svg>
+    <div class="container">
+
+        <span class="trust-label">
+            HR • Executive Search • Консалтинг
+        </span>
+
+        <h2>
+            Подбираем не сотрудников.
+            Собираем команды, которые двигают бизнес вперёд.
+        </h2>
+
+        <p>
+            Работаем там, где цена ошибки в найме слишком высока.
+        </p>
+
     </div>
-    <section class="bg-contacts">
-        <div class="container">
-            <h2 class="section-title">Контакты</h2>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 500px; margin: 0 auto;">
-                <a href="https://t.me/bureau_of_talents" target="_blank" class="contact-icon" style="justify-content: center;">📢 Telegram-канал</a>
-                <a href="https://m.tenchat.ru/u/ZtsTrdnd" target="_blank" class="contact-icon" style="justify-content: center;">💼 TenChat</a>
-                <a href="mailto:vi.cattleya25@gmail.com" class="contact-icon" style="justify-content: center;">✉️ Почта</a>
-                <a href="tel:+78005556677" class="contact-icon" style="justify-content: center;">📞 Телефон</a>
-            </div>
+
+</section>
+    <!-- Контакты -->
+    <section id="contacts" class="bg-contacts">
+    <div class="container">
+
+        <span class="contacts-label">
+            Контакты
+        </span>
+
+        <h2 class="section-title">
+            Обсудим вашу задачу
+        </h2>
+
+        <p class="contacts-subtitle">
+            Выберите удобный способ связи. Ответим на вопросы,
+            обсудим задачу и предложим решение.
+        </p>
+
+        <div class="contacts-grid">
+
+            <a href="https://t.me/bureau_of_talents" target="_blank" class="contact-card">
+                <i class="fab fa-telegram-plane"></i>
+                <span>Telegram</span>
+            </a>
+
+            <a href="https://m.tenchat.ru/u/ZtsTrdnd" target="_blank" class="contact-card">
+                <i class="fas fa-briefcase"></i>
+                <span>TenChat</span>
+            </a>
+
+            <a href="mailto:vi.cattleya25@gmail.com" class="contact-card">
+                <i class="far fa-envelope"></i>
+                <span>E-mail</span>
+            </a>
+
+            <a href="tel:+78005556677" class="contact-card">
+                <i class="fas fa-phone"></i>
+                <span>Телефон</span>
+            </a>
+
         </div>
-    </section>
+
+    </div>
+</section>
 
 </main>
 
-<footer>
+<footer class="premium-footer">
     <div class="container">
-        <p>© 2025 Бюро Талантов / Bureau of Talents — кадровое агентство полного цикла</p>
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <h3>Bureau of Talents</h3>
+                <p>
+                    Executive Search, HR-аудит и HR-консалтинг
+                    для компаний, которым нужны сильные команды.
+                </p>
+            </div>
+<div class="footer-links-wrapper">
+     <h4>Разделы сайта</h4>
+            <div class="footer-links">
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+                <a href="#services">Услуги</a>
+            </div>
+</div>
+        </div>
+
+        <div class="footer-bottom">
+
+    <span>
+        © 2025 Bureau of Talents
+    </span>
+
+    <span>
+        Executive Search • HR Audit • HR Consulting
+    </span>
+
+</div>
+
     </div>
 </footer>
 
