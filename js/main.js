@@ -233,18 +233,72 @@ function initFormHandler() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+// ===== CHECKBOX VALIDATION =====
+function initFormValidation() {
+    const forms = [
+        { formId: 'callbackForm', checkboxId: 'callbackConsent' },
+        { formId: 'guideFormModal', checkboxId: 'guideConsent' }
+    ];
+
+    forms.forEach(({ formId, checkboxId }) => {
+        const form = document.getElementById(formId);
+        const checkbox = document.getElementById(checkboxId);
+        if (!form || !checkbox) return;
+
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) btn.disabled = true;
+
+        checkbox.addEventListener('change', function() {
+            if (btn) btn.disabled = !this.checked;
+        });
+
+        form.addEventListener('submit', function(e) {
+            if (!checkbox.checked) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                alert('Необходимо согласие на обработку персональных данных');
+            }
+        });
+    });
+}
+
+// ===== COOKIE BANNER =====
+function initCookieBanner() {
+    const banner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('cookieAccept');
+    if (!banner || !acceptBtn) return;
+
+    if (localStorage.getItem('cookieConsent') === 'true') {
+        banner.classList.add('hidden');
+        return;
+    }
+
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'true');
+        banner.classList.add('hidden');
+    });
+}
+
+function initAll() {
+    initFormValidation();
     initFormHandler();
     initSmoothScroll();
     initReviewsCarousel();
     initFaqAccordion();
     initGuideForm('guideFormModal', 'guide_modal_name', 'guide_modal_email', 'guide_modal_phone', 'guide_modal_company');
     initMobileMenu();
+    initCookieBanner();
 
     if (typeof ymaps !== 'undefined') {
         ymaps.ready(initMap);
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+} else {
+    initAll();
+}
 // ===== MOBILE MENU =====
 
 function initMobileMenu() {
