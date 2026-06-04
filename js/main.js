@@ -13,33 +13,6 @@ function initMap() {
     }
 }
 
-// ===== FORM HANDLER =====
-function initFormHandler() {
-    const form = document.getElementById('callbackForm');
-    if (!form) return;
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = form.querySelector('button[type="submit"]');
-        btn.textContent = 'Отправляем...';
-        btn.disabled = true;
-
-        const data = new FormData(form);
-        fetch('https://formspree.io/f/ВАШ_ID_ФОРМЫ', {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-        }).then(r => r.json()).then(() => {
-            alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-            form.reset();
-        }).catch(() => {
-            alert('❌ Ошибка отправки. Попробуйте позже или напишите нам на почту.');
-        }).finally(() => {
-            btn.textContent = 'Отправить заявку';
-            btn.disabled = false;
-        });
-    });
-}
-
 // ===== SMOOTH SCROLL =====
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -266,8 +239,51 @@ document.addEventListener('DOMContentLoaded', function() {
     initReviewsCarousel();
     initFaqAccordion();
     initGuideForm('guideFormModal', 'guide_modal_name', 'guide_modal_email', 'guide_modal_phone', 'guide_modal_company');
+    initMobileMenu();
 
     if (typeof ymaps !== 'undefined') {
         ymaps.ready(initMap);
     }
 });
+// ===== MOBILE MENU =====
+
+function initMobileMenu() {
+
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => {
+
+        btn.classList.toggle('active');
+        menu.classList.toggle('active');
+
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+
+        });
+
+    });
+
+    document.addEventListener('click', (e) => {
+
+        if (
+            !menu.contains(e.target) &&
+            !btn.contains(e.target)
+        ) {
+
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+
+        }
+
+    });
+
+}
