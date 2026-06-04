@@ -834,6 +834,9 @@ section > * {
     padding: 0 20px 20px;
     pointer-events: none;
 }
+.cookie-banner.hidden {
+    display: none !important;
+}
 .cookie-banner-content {
     display: flex;
     align-items: center;
